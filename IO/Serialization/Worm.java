@@ -56,7 +56,7 @@ public class Worm implements Serializable {
         ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream("./Worm.out"));
         out.writeObject("Worm storage\n");
-        out.writeObject(w);
+        out.writeObject(w); // cannot write if not serializable
         out.close();
 
         // read data in
