@@ -19,7 +19,7 @@ public class LiftOff implements Runnable {
     public void run() {
         while(countDown-- > 0) {
             System.out.print(status());
-            Thread.yield(); // shows the current thread is willing to yield
+            Thread.yield(); // shows the current thread is willing to yield, to produce well-destributed processing
         }
     }
 }
