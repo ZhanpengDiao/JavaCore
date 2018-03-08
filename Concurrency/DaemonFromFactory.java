@@ -15,7 +15,7 @@ public class DaemonFromFactory implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService exec = Executors.newCachedThreadPool(new DaemonThreadFactory());
+        ExecutorService exec = Executors.newCachedThreadPool(new DaemonThreadFactory()); // ThreadFactory as argument
         for(int i = 0; i < 10 ;i ++) {
             exec.execute(new DaemonFromFactory());
         }
