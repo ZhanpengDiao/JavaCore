@@ -16,6 +16,6 @@ public class Splitting {
    public static void main(String[] args) {
        split(" ");
        split("\\W+");
-       split("n\\W+");
+       split("n\\*");
    }
 }
