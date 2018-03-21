@@ -37,6 +37,6 @@ public class HandleUncaughtException {
         exe.execute(new ExceptionThread());
 
         // can also set default uncaught exception handler
-//        Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+//        Thread.setDefaultUncaughtExceptionHandler(new MyUncaughtExceptionHandler()); overall setting
     }
 }
