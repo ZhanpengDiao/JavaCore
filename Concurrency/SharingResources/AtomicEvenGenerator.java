@@ -6,7 +6,7 @@ package SharingResources;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class AtomicEvenGenerator extends IntGenerator{
+public class AtomicEvenGenerator extends IntGenerator {
 
     private AtomicInteger currentValue = new AtomicInteger(0);
 
