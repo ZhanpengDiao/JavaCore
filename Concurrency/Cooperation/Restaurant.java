@@ -2,7 +2,6 @@
 
 package Cooperation;
 
-import javax.lang.model.type.ExecutableType;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +43,7 @@ class Chef implements Runnable {
     @Override
     public void run() {
         try {
-            while(!Thread.interrupted()) {
+            while(!Thread.interrupted()) { // simply return from run after receiving shutdownNow()
                 synchronized (this) {
                     while(restaurant.meal != null) {
                         wait(); // no need to cook new
@@ -59,7 +58,7 @@ class Chef implements Runnable {
                     restaurant.meal = new Meal(count);
                     restaurant.waiter.notifyAll(); // notify the waiter that the new food is ready
                 }
-                TimeUnit.MILLISECONDS.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(100); // if sleep() is commented out, there will be no exception thrown
             }
         } catch (InterruptedException e) {
             System.out.println("chef interrupted");
