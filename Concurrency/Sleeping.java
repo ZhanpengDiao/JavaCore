@@ -1,6 +1,8 @@
+import Cooperation.LiftOff;
+
 import java.util.concurrent.*;
 
-public class Sleeping extends LiftOff{
+public class Sleeping extends LiftOff {
     public void run() {
         try {
             while(countDown-- > 0) {
