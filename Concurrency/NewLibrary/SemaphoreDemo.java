@@ -1,3 +1,6 @@
+// Semaphore used to restrict the number of access in Pool
+// see Pool class
+
 package NewLibrary;
 
 import java.util.ArrayList;

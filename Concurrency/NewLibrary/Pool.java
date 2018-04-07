@@ -1,4 +1,5 @@
 // semaphore: allows n tasks to access to resource  at the same time
+// condition of use: obj is expensive to create
 
 package NewLibrary;
 
