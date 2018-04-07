@@ -1,6 +1,8 @@
 // Fibonacci with generator
 
-public class Fibonacci implements Generator<Integer>{
+import Generator.Generator;
+
+public class Fibonacci implements Generator<Integer> {
     private int count = 0;
     private int fib(int i) {
         if(i < 2) return 1;

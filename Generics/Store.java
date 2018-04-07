@@ -1,6 +1,8 @@
 // Building up a complex model using generic containers
 // a retail store with aisles, shelves and products
 
+import Generator.Generator;
+
 import java.util.*;
 
 class Product{

@@ -11,18 +11,18 @@ class Accessor implements Runnable {
     @Override
     public void run() {
         while(!Thread.currentThread().isInterrupted()) {
-            ThreadLocalVaribleHolder.increment();
+            ThreadLocalVariableHolder.increment();
             System.out.println(this);
             Thread.yield();
         }
     }
 
     public String toString() {
-        return "#" + id + ": " + ThreadLocalVaribleHolder.get();
+        return "#" + id + ": " + ThreadLocalVariableHolder.get();
     }
 }
 
-public class ThreadLocalVaribleHolder {
+public class ThreadLocalVariableHolder {
     private static ThreadLocal<Integer> value = new ThreadLocal<Integer>() { // usually as static
         private Random rand = new Random();
         protected synchronized Integer initialValue() {
@@ -39,8 +39,8 @@ public class ThreadLocalVaribleHolder {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService exec = Executors.newCachedThreadPool();
         for(int i = 0; i < 5; i++) {
-            exec.execute(new Accessor(i));
-        }
+            exec.execute(new Accessor(i)); // each task keeps own count even though there's only one
+        }                                   // LocalThreadVariableHolder
         TimeUnit.SECONDS.sleep(3);
         exec.shutdown();
     }

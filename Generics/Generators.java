@@ -1,3 +1,5 @@
+import Generator.Generator;
+
 import java.util.*;
 
 public class Generators {

@@ -1,8 +1,10 @@
+package Generator;
+
 class CountedObject {
     private static int counter = 0;
     private final int id = counter++;
     public String toString() {
-        return "CountedObject " + id;
+        return "Generator.CountedObject " + id;
     }
 }
 
